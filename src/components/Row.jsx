@@ -5,14 +5,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import 'swiper/css';
-import { fetchUpcomingMovies, selectUpcomingMovies } from '../features/movie/movieSlice';
 import Card from './Card';
 
-const Row = () => {
+const Row = ({ title, selector, action }) => {
     const dispatch = useDispatch();
-    const { status, data } = useSelector(selectUpcomingMovies);
+    const { status, data } = useSelector(selector);
     useEffect(() => {
-        dispatch(fetchUpcomingMovies());
+        dispatch(action());
     }, [])
 
 
@@ -24,7 +23,7 @@ const Row = () => {
                     <div>...loading</div> :
                     status === "success" ?
                         <>
-                            <h2>Row Title</h2>
+                            <h2 className='text-2xl font-bold mb-3'>{title}</h2>
                             <Swiper
                                 spaceBetween={20}
                                 slidesPerView={5}
