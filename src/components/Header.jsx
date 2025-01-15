@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { fetchHeaderDetails, selectHeaderDetails } from "../features/common/commonSlice";
 import { truncateText } from "../helper";
 import { IMG_URL } from "../helper/api-requests";
@@ -29,7 +30,7 @@ const Header = ({ video, platform }) => {
                     <GenreLinks genres={data.genres} />
                     <div className="mt-4 flex gap-3 items-center">
                         <button className="bg-red-600 text-white rounded-md min-w-40 p-3 font-bold text-xl">Play</button>
-                        <button className="bg-orange-600 text-white rounded-md min-w-40 p-3 font-bold text-xl">More Info</button>
+                        <Link to={`/details/${platform}/${data.id}`} className="bg-orange-600 text-white rounded-md min-w-40 p-3 text-center font-bold text-xl">More Info</Link>
                     </div>
                 </div>
 
