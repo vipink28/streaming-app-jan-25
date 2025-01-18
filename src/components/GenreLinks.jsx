@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 
 const GenreLinks = ({ genres }) => {
-
     return (
         <div className="py-3 flex gap-2 items-center">
             {

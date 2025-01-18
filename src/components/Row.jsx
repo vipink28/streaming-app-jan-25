@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import 'swiper/css';
 import Card from './Card';
 
-const Row = ({ title, selector, action }) => {
+const Row = ({ title, selector, action, platform }) => {
     const dispatch = useDispatch();
     const { status, data } = useSelector(selector);
     useEffect(() => {
@@ -31,7 +31,7 @@ const Row = ({ title, selector, action }) => {
                                 {
                                     data.results.map((video) => (
                                         <SwiperSlide key={video.id}>
-                                            <Card video={video} />
+                                            <Card video={video} platform={platform} />
                                         </SwiperSlide>
                                     ))
 

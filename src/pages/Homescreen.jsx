@@ -23,11 +23,11 @@ const Homescreen = () => {
             }
 
             <div className="px-5 py-3">
-                <Row title="Now Playing Movies" action={fetchNowPlayingMovies} selector={selectNowPlayingMovies} />
+                <Row title="Now Playing Movies" action={fetchNowPlayingMovies} selector={selectNowPlayingMovies} platform={platformType.movie} />
 
-                <Row title="Upcoming Movies" action={fetchUpcomingMovies} selector={selectUpcomingMovies} />
+                <Row title="Upcoming Movies" action={fetchUpcomingMovies} selector={selectUpcomingMovies} platform={platformType.movie} />
 
-                <Row title="Netflix Originals" action={fetchNetflixOriginals} selector={selectNetflixOriginals} />
+                <Row title="Netflix Originals" action={fetchNetflixOriginals} selector={selectNetflixOriginals} platform={platformType.tv} />
             </div>
         </>
     )

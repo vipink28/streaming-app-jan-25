@@ -7,8 +7,8 @@ const Navbar = () => {
                 <div className="text-white font-bold text-2xl py-2">Streaming App</div>
                 <div className="ms-5 flex gap-3 text-blue-50">
                     <Link to="/">Home</Link>
-                    <Link to="/">Tv Shows</Link>
-                    <Link to="/">Movies</Link>
+                    <Link to="/browse/tv">Tv Shows</Link>
+                    <Link to="/browse/movie">Movies</Link>
                 </div>
             </div>
         </div>

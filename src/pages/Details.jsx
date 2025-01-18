@@ -17,7 +17,7 @@ const Details = () => {
     }, [platform, id]);
 
     return (
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-screen-2xl mx-auto px-4">
             {
                 status === "success" ?
                     <div className="flex flex-col mt-12">
@@ -26,11 +26,13 @@ const Details = () => {
                             {/* <img className="w-full h-full object-cover object-center inline-block" src={IMG_URL + data.backdrop_path} alt="" /> */}
                         </div>
 
-                        <div className="flex">
+                        <div className="flex gap-3">
                             <div className="w-2/6">
                                 <img className="max-w-full inline-block" src={IMG_URL + data.poster_path} alt="" />
                             </div>
-                            <div className="w-2/3"></div>
+                            <div className="w-2/3">
+                                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">{data.name || data.original_name || data.title || data.original_title}</h1>
+                            </div>
                         </div>
 
                     </div>
