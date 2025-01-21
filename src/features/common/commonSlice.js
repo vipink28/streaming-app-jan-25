@@ -11,7 +11,8 @@ const initialState = {
         status: "idle",
         data: null,
         error: null
-    }
+    },
+    queryString: ""
 }
 
 export const fetchHeaderDetails = createAsyncThunk(
@@ -34,7 +35,11 @@ export const fetchVideoDetails = createAsyncThunk(
 export const commonSlice = createSlice({
     name: "common",
     initialState,
-    reducers: {},
+    reducers: {
+        searchQuery: (state, action) => {
+            state.queryString = action.payload;
+        }
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchHeaderDetails.pending, (state) => {
@@ -62,6 +67,10 @@ export const commonSlice = createSlice({
     }
 });
 
+
+export const { searchQuery } = commonSlice.actions;
+
+export const selectSearchQuery = (state) => state.common.queryString;
 export const selectHeaderDetails = (state) => state.common.headerDetails;
 export const selectVideoDetails = (state) => state.common.videoDetails;
 

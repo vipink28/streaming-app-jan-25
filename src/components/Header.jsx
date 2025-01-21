@@ -39,7 +39,7 @@ const Header = ({ video, platform }) => {
                             <h3 className="text-orange-500 mb-3 text-4xl italic">{data.tagline}</h3>
                             <p className="text-xl mb-5">{truncateText(data.overview, 180)}</p>
                             <Ratings voteAverage={data.vote_average} voteCount={data.vote_count} />
-                            <GenreLinks genres={data.genres} />
+                            <GenreLinks genres={data.genres} platform={platform} />
                             <div className="mt-4 flex gap-3 items-center">
                                 <button onClick={handleVideoPlayer} className="bg-red-600 text-white rounded-md min-w-40 p-3 font-bold text-xl">Play</button>
                                 <Link to={`/details/${platform}/${data.id}`} className="bg-orange-600 text-white rounded-md min-w-40 p-3 text-center font-bold text-xl">More Info</Link>

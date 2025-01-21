@@ -1,6 +1,17 @@
-import { Link } from "react-router-dom"
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { searchQuery } from "../features/common/commonSlice";
 
 const Navbar = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const handleSearch = (e) => {
+        let { value } = e.target;
+        dispatch(searchQuery(value));
+        if (value.length > 3) {
+            navigate("/search")
+        }
+    }
     return (
         <div className="bg-slate-950 fixed top-0 w-full z-50 bg-opacity-40 hover:bg-opacity-100">
             <div className="max-w-7xl px-4 mx-auto flex items-center">
@@ -10,6 +21,9 @@ const Navbar = () => {
                     <Link to="/browse/tv">Tv Shows</Link>
                     <Link to="/browse/movie">Movies</Link>
                     <Link to="/browsebygenre/movie/28">Browse By Genre</Link>
+                </div>
+                <div className="ms-auto">
+                    <input type="text" className="px-3 py-1" onChange={handleSearch} />
                 </div>
             </div>
         </div>

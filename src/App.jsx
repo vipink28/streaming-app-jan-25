@@ -4,6 +4,7 @@ import Browse from "./pages/Browse"
 import BrowseByGenre from "./pages/BrowseByGenre"
 import Details from "./pages/Details"
 import Homescreen from "./pages/Homescreen"
+import SearchResults from "./pages/SearchResults"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/details/:platform/:id" element={<Details />}></Route>
         <Route path="/browse/:platform" element={<Browse />}></Route>
         <Route path="/browsebygenre/:platform/:genreid" element={<BrowseByGenre />}></Route>
+        <Route path="/search" element={<SearchResults />}></Route>
       </Routes>
     </BrowserRouter>
   )
