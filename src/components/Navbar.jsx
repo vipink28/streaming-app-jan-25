@@ -23,7 +23,7 @@ const Navbar = () => {
                     <Link to="/browsebygenre/movie/28">Browse By Genre</Link>
                 </div>
                 <div className="ms-auto">
-                    <input type="text" className="px-3 py-1" onChange={handleSearch} />
+                    <input type="text" className="px-3 py-1 text-black" onChange={handleSearch} />
                 </div>
             </div>
         </div>

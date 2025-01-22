@@ -51,9 +51,9 @@ const BrowseByGenre = () => {
         <div className='mt-12 py-6 px-4'>
             <div className='mb-6 flex gap-3 justify-end text-slate-950'>
                 <p className='text-white'>Filter By:</p>
-                <select className='py-1 px-2' onChange={handlePlatform}>
-                    <option selected={platform === "tv" ? true : false} value="tv">Tv</option>
-                    <option selected={platform === "movie" ? true : false} value="movie">Movie</option>
+                <select defaultValue={platform} className='py-1 px-2' onChange={handlePlatform}>
+                    <option value="tv">Tv</option>
+                    <option value="movie">Movie</option>
                 </select>
                 <select className='py-1 px-2' onChange={handleGenres}>
                     {
