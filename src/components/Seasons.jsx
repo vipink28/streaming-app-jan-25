@@ -4,7 +4,7 @@ import axios from '../helper/axios';
 import EpisodeLists from './EpisodeLists';
 
 const Seasons = ({ seasonsList, seriesId, numberOfSeasons }) => {
-    const [seasonDetails, setSeasonDetails] = useState();
+    const [seasonDetails, setSeasonDetails] = useState(null);
 
     const fetchSeasonDetails = async (seriesId, seasonNumber) => {
         const response = await axios.get(apiRequests.getSeasonsDetails(seriesId, seasonNumber));

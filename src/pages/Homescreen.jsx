@@ -13,6 +13,10 @@ const Homescreen = () => {
         dispatch(fetchNetflixOriginals())
     }, [])
 
+
+    const handleNext = () => {
+        dispatch(fetchUpcomingMovies(2))
+    }
     return (
         <>
             {status === "loading" ?
@@ -21,6 +25,8 @@ const Homescreen = () => {
                     <Header video={data.results[Math.floor(Math.random() * data.results.length)]} platform={platformType.tv} />
                     : ""
             }
+
+            <button onClick={handleNext}>Next</button>
 
             <div className="px-5 py-3">
                 <Row title="Now Playing Movies" action={fetchNowPlayingMovies} selector={selectNowPlayingMovies} platform={platformType.movie} />

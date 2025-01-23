@@ -17,8 +17,8 @@ const initialState = {
 
 export const fetchUpcomingMovies = createAsyncThunk(
     "movie/fetchUpcomingMovies",
-    async () => {
-        const response = await axios.get(apiRequests.getCollection(platformType.movie, endpoints.upcoming));
+    async (page = 1) => {
+        const response = await axios.get(apiRequests.getCollection(platformType.movie, endpoints.upcoming, page));
         return response.data;
     }
 );
@@ -26,7 +26,7 @@ export const fetchUpcomingMovies = createAsyncThunk(
 export const fetchNowPlayingMovies = createAsyncThunk(
     "movie/fetchNowPlayingMovies",
     async () => {
-        const response = await axios.get(apiRequests.getCollection(platformType.movie, endpoints.nowPlaying));
+        const response = await axios.get(apiRequests.getCollection(platformType.movie, endpoints.nowPlaying, 1));
         return response.data;
     }
 );
